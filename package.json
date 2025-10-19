@@ -152,6 +152,9 @@
     "vitest": "^3.0.7",
     "vitest-fail-on-console": "^0.7.1"
   },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,mts}": "npx eslint --quiet --fix"
+  },
   "config": {
     "commitizen": {
       "path": "@commitlint/cz-commitlint"
