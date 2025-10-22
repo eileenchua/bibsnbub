@@ -32,13 +32,13 @@ jobs:
           if [ -z "$CLERK_SECRET_KEY" ]; then echo "❌ CLERK_SECRET_KEY is empty"; else echo "✅ CLERK_SECRET_KEY is set"; fi
           if [ -z "$NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY" ]; then echo "❌ NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY is empty"; else echo "✅ NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY is set"; fi
           if [ -z "$NEXT_PUBLIC_CLERK_SIGN_IN_URL" ]; then echo "❌ NEXT_PUBLIC_CLERK_SIGN_IN_URL is empty"; else echo "✅ NEXT_PUBLIC_CLERK_SIGN_IN_URL is set"; fi
-      # - name: Use Node.js ${{ matrix.node-version }}
-      #   uses: actions/setup-node@v4
-      #   with:
-      #     node-version: ${{ matrix.node-version }}
-      #     cache: npm
-      # - run: npm ci
-      # - run: npm run build
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+      - run: npm ci
+      - run: npm run build
 
   # test:
   #   strategy:
